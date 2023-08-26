@@ -1,4 +1,4 @@
-# ZX0 6502 Decompressor
+# ZX0 6502 Decompressor Acorn BeebAsm Port
 
 This is a BeebAsm 6502 port of https://xxl.atari.pl/zx0-decompressor/
 
