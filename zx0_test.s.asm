@@ -17,25 +17,25 @@ ORG &1100
 .entry_point
 
     \\ Turn off cursor by directly poking crtc
-	LDA #10
-    STA &FE00
-	LDA #32
-    STA &FE01
+    lda #10
+    sta &FE00
+	lda #32
+    sta &FE01
 
-    LDX #LO(test_data)
-    LDY #HI(test_data)
-    STX ZX0_INPUT+0
-    STY ZX0_INPUT+1
+    ldx #LO(test_data)
+    ldy #HI(test_data)
+    stx ZX0_INPUT+0
+    sty ZX0_INPUT+1
     
-    LDX #LO(LOAD_ADDR)
-    LDY #HI(LOAD_ADDR)
-    STX ZX0_OUTPUT+0
-    STY ZX0_OUTPUT+1
+    ldx #LO(LOAD_ADDR)
+    ldy #HI(LOAD_ADDR)
+    stx ZX0_OUTPUT+0
+    sty ZX0_OUTPUT+1
     
-    JSR dzx0_standard
+    jsr dzx0_standard
 
 .loop
-    JMP loop
+    jmp loop
     
 .test_data
     INCBIN ".\tests\test_0.bin.zx0"
