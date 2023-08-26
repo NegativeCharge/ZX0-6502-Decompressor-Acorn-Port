@@ -55,7 +55,7 @@ PRINT "CODE size      = ", ~end-start
 PRINT "------------------------"
 PRINT "LOAD ADDR      = ", ~start
 PRINT "HIGH WATERMARK = ", ~P%
-PRINT "RAM BYTES FREE = ", ~&3000-P%
+PRINT "RAM BYTES FREE = ", ~LOAD_ADDR-P%
 PRINT "------------------------"
 
 PUTBASIC "loader.bas","LOADER"
