@@ -17,10 +17,10 @@ ORG &1100
 .entry_point
 
     \\ Turn off cursor by directly poking crtc
-    lda #10
-    sta &FE00
-	lda #32
-    sta &FE01
+    lda #&0b
+    sta &fe00
+    lda #&20
+    sta &fe01
 
     ldx #LO(test_data)
     ldy #HI(test_data)
