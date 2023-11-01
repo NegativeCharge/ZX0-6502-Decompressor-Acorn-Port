@@ -6,7 +6,6 @@
     sty   lenL
     sty   lenH
     lda   #$80
-
 .dzx0s_literals
     jsr   dzx0s_elias
     pha
@@ -89,7 +88,6 @@ offsetH=*-1
     plp                         ; stream
     pla
     rts                         ; end
-
 .l2
     jsr   get_byte
     plp                         ; stream
@@ -125,7 +123,6 @@ offsetH=*-1
     rol   lenL
     rol   lenH
     jmp   dzx0s_elias_loop
-
 .get_byte    
     lda    $ffff
 ZX0_INPUT=*-2

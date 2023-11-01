@@ -34,8 +34,7 @@ ORG &1100
     
     jsr dzx0_standard
 
-.loop
-    jmp loop
+    jmp *
     
 .test_data
     INCBIN ".\tests\test_0.bin.zx0"
@@ -51,11 +50,13 @@ SAVE "ZX0TEST", start, end, entry_point
 PRINT "------------------------"
 PRINT "ZX0 Decompressor"
 PRINT "------------------------"
-PRINT "CODE size      = ", ~end-start
+PRINT "CODE SIZE         = ", ~end-start
+PRINT "DECOMPRESSOR SIZE = ", entry_point-start, "bytes"
+PRINT "ZERO PAGE SIZE    = ", zp_end-zp_start, "bytes"
 PRINT "------------------------"
-PRINT "LOAD ADDR      = ", ~start
-PRINT "HIGH WATERMARK = ", ~P%
-PRINT "RAM BYTES FREE = ", ~LOAD_ADDR-P%
+PRINT "LOAD ADDR         = ", ~start
+PRINT "HIGH WATERMARK    = ", ~P%
+PRINT "RAM BYTES FREE    = ", ~LOAD_ADDR-P%
 PRINT "------------------------"
 
 PUTBASIC "loader.bas","LOADER"
